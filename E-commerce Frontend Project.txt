@@ -1,0 +1,7 @@
+E-commerce Frontend Project
+
+-> Developed a responsive e-commerce website frontend.
+-> Utilized HTML, CSS, and JavaScript for development.
+-> Implemented features like product pages, dynamic filtering, and cart management using local storage.
+-> Designed and integrated a blog, About Us, Contact Us, FAQ, and newsletter subscription.
+-> Demonstrated skills in frontend development, UI/UX design, and responsive web design.

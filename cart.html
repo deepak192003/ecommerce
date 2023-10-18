@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar" class="Navar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="abt.html">About</a></li>
+                <li><a href="cntct.html">Contact Us</a></li>
+                <li id="bag1"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+                </ul>
+            
+        </div>
+        <div id="mobile">
+            
+           <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    
+    <section class="ecartheader">
+        <img src="ecartimg/e1.jpg" alt="">
+    </section>
+
+        <section id="cart" class="section-p1">
+        <table width="100%" id="cart-table">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    
+                </tbody>
+        </table>
+
+        </section>
+        
+        <section id="cart-add" class="section-p1">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter Your Coupon">
+                    <button class="normal">Apply</button>
+                </div>
+            </div>
+            <div id="subtotal">
+                <h3>Cart Total</h3>
+                <table>
+                
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr class="total_calculation">
+                        <td><strong>Total</strong></td>
+                        <td class="total_price"><strong>0</strong></td>
+                    </tr>
+                </table>
+                <button class="normal">Proceed to Checkout</button>
+            </div>
+        </section>
+
+    <footer class="section-p1 footer-p1">
+    <div class="col">
+        <img class="logo" src="logo.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> Amlori,Sarsar Siwan Bihar India</p>
+        <p><strong>Phone: </strong> 887300259</p>
+        <p><strong>Hours: </strong> 10:00AM - 8PM Mon - Sat</p>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+</div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play Store</p>
+        <div class="row">
+            <img src="pay/app.jpg" alt="">
+            <img src="pay/play.jpg" alt="">
+        </div>
+    </div>
+    </footer>
+
+    <style>
+        
+        #header #navbar #bag1 a{
+            text-decoration: none;
+            color: black;
+        }
+        #cart{
+            overflow-x: auto;
+        }
+        #cart table{
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; 
+            white-space: nowrap;
+        }
+        #cart table img{
+            width: 70px;
+        }
+        #cart table td:nth-child(1)
+        {
+            width: 100px;
+            text-align: center;
+        }
+        #cart table td:nth-child(2)
+        {
+            width: 150px;
+            text-align: center;
+        }
+        #cart table td:nth-child(3)
+        {
+            width: 250px;
+            text-align: center;
+        }
+        #cart table td:nth-child(4),
+        #cart table td:nth-child(5),
+        #cart table td:nth-child(6)
+        {
+            width: 150px;
+            text-align: center;
+        }
+
+        .ecartheader img{
+            height: 53vh;    
+           width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #cart table td:nth-child(5) input{
+            width: 70px;
+            padding: 10px 5px 10px 15px;
+        }
+        #cart table thead{
+            border: 1px solid rgb(211, 198, 168);
+            border-left: none;
+            border-right: none;
+            margin-bottom: 5px;
+        }
+        #cart table thead td{
+
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            padding: 18px 0;
+        }
+        #cart table tbody tr td{
+            padding-top: 15px;
+        }
+        #cart-add{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+  #coupon{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  #coupon h3,#subtotal h3{
+    padding-bottom: 15px;
+  }
+  #coupon input{
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+  }
+  #coupon button{
+    width: 90px;
+    font-size: 17px;
+    background-color: seagreen;
+    color: white;
+  } 
+
+            #subtotal{
+                width: 50%;
+                margin-bottom: 30px;
+                border: 1px solid rgb(241, 216, 216);
+                padding: 30px;
+            }
+            #subtotal table{
+                border-collapse: collapse;
+                width: 100%;
+                margin-bottom:20px;
+
+            }
+            #subtotal table td{
+                width: 50%;
+                border: 1px solid rgb(147, 115, 115);
+                padding: 10px;
+                font-size: 17px;
+            }
+            #subtotal button{
+                font-size: medium;
+                background-color: rgb(54, 146, 95);
+                color: white;
+            }
+    </style>
+    <script>
+    // Function to display cart items on the cart page
+// Function to display cart items on the cart page
+function displayCart() {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Get the table body element
+    const tbody = document.querySelector('#cart tbody');
+
+    // Clear the existing cart items from the table
+    tbody.innerHTML = '';
+
+    // Initialize the total price
+    let totalPrice = 0;
+
+    // Loop through each item in the cart data
+    cartData.forEach((item, index) => { 
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td> <a href="#"><i class="fa fa-trash-o removebutton" aria-hidden="true" data-index="${index}"></i></a></td>
+            <td><img src="${item.img}" alt="${item.name}" width="100"></td>
+            <td>${item.name}</td>
+            <td>₹${item.price.toFixed(2)}</td>
+            <td><input type="number" value="${item.quantity}"></td>
+            <td>₹${(item.price * item.quantity).toFixed(2)}</td>
+        `;
+
+        // Append the row to the table
+        tbody.appendChild(row);
+
+        // Update the total price
+        totalPrice += item.price * item.quantity;
+        updateTotalPrice();
+    });
+
+    // Update the total price element
+    const totalElement = document.querySelector('#total-price');
+    if (totalElement) {
+        totalElement.textContent = `₹${totalPrice.toFixed(2)}`;
+    }
+    }
+
+// Call the function to display the cart when the cart page loads
+displayCart();
+
+
+
+// Attach a single click event listener to the table container
+const cartTable = document.getElementById('cart-table');
+cartTable.addEventListener('click', (event) => {
+    if (event.target.classList.contains('removebutton')) {
+        // Check if the clicked element has the 'removebutton' class
+        const removeIcon = event.target;
+        const itemIndex = removeIcon.getAttribute('data-index');
+        
+        // Remove the item from the cart
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(itemIndex, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Remove the row from the table
+        const rowToRemove = removeIcon.closest('tr');
+        rowToRemove.remove();
+        
+        displayCart();
+        updateTotalPrice();
+    }
+});
+
+
+function updateTotalPrice() {
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalPrice = 0;
+
+    // Calculate the sum of product prices
+    cartData.forEach((item) => {
+        totalPrice += item.price * item.quantity;
+    });
+
+    // Update the total price element on the cart page
+    const totalElement = document.querySelector('.total_price');
+    if (totalElement) {
+        totalElement.textContent = `₹${totalPrice.toFixed(2)}`;
+    }
+}
+updateTotalPrice();
+    </script>
+<script src="shopcart.js"></script>
+</body>
+</html>

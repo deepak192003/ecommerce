@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap');
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #E3E6F3;
+    box-shadow: 0 5px 15px rgb(0, 0, 0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #353636;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+h4{
+    font-size: 20px;
+    color: #222;
+}
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0px 20px 0px;
+}
+.section-p1{
+    margin: 40px 80px;
+}
+.section-m1{
+    margin: 40px 0;
+}
+body{
+    width: 100%;
+}
+
+button.normal{
+    margin-top: 23px;
+    font-size: 23px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#close{
+    display: none;
+}
+#navbar li a:hover,
+#navbar li a.active
+{
+    color: #219393;
+    transform: 0.3 ease;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after
+{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color:  #219393 ;
+    position: absolute;
+    left: 20px;
+    bottom: -4px;
+}
+    #mobile{
+        display: none;
+        align-items: center;
+    }
+    #navbar.active {
+        right: 0px;
+    }
+/* header section */
+
+
+.aboutus{
+    display: flex;
+    height: 700px;
+    width: 100%;
+}
+
+.aboutus .img{
+    background-image: url('./aboutusimg/img3.png');
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aboutus .aboutcontent{
+    width: 50%; 
+    text-align: center;
+    align-items: center;
+    padding: 50px;
+}
+.aboutus .aboutcontent h2{
+    float: left;
+    color: white;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.aboutus .img .aboutuscontent h2{
+    color: rgb(232, 210, 210);
+    margin-left: 25px;
+    padding-top: 0px;
+    width: 55%;
+    font-size: 29px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 200;
+    font-style: initial;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.mission .ourmission h2{
+    font-size: 43px;
+    color: rgb(54, 24, 84);
+    text-align: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 13px;
+}
+.mission .missioncontent h2{
+    color: #214a4a;
+    flex-wrap: wrap;
+    font-size: 30px;
+    padding: 0 70px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+.mission .visionimg{
+    background-image: url('./aboutusimg/4.webp');
+    height: 36vw;
+    width: 76vw;
+    margin-left: 70px;
+    margin-right: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+    border-top-left-radius: 44px;
+}
+
+.customer .customerstisfy h2{
+    text-align: center;
+    font-size: 43px;
+    color: rgb(54, 24, 84);
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 13px;
+}
+.customer .level3 h2{
+    color: #214a4a;
+    flex-wrap: wrap;
+    font-size: 30px;
+    padding: 0 70px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+.customer .collectionimg{
+    background-image: url('./aboutusimg/11.jpg');
+    height: 40vw;
+    width: 59vw;
+    margin-left: 12vw;
+    margin-right: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+footer{
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer .logo{
+    margin-bottom: 30px;
+}
+footer h4{
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+footer a{
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(52, 51, 51);
+    margin: 0 0 7px 0;
+}
+footer .follow{
+    margin-top: 20px;
+}
+footer .follow i{
+    color: #0f2f21;
+    padding-right: 5px;
+    cursor: pointer;
+}
+footer .install .row img{
+    border: 1px solid rgb(69, 116, 69);
+    border-radius: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+footer .follow i:hover, 
+footer a:hover{
+    color: #0a7144;
+
+}

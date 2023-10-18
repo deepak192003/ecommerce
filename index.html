@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet"  media="screen and (max-width: 1340px)" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+   <script src="./loginauthenticaton/userinforcookies.js"></script>
+</head>
+
+
+<style>
+ .form {
+    display: flex;
+    flex-direction: column;
+   }
+
+    #hero .form {
+    border-radius: 4px;
+    margin: auto;
+    background-color: rgb(237, 234, 231);
+    height: 53vh;
+    width: 40vw;
+    position: sticky;
+}
+
+    .form .fa{
+        color: rgb(251, 52, 52);
+    }
+    .form i{
+        position: absolute;
+        right: 23px;
+        top: 15px;
+        font-size: 5vh;
+        cursor: pointer;
+    }
+    .form-row {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.form .form-container .form-row label{
+    margin-top: 23px;
+    margin-left: 33px;
+    font-style: unset;
+}
+.form .form-container .form-row label,input{
+    width: 100%;
+    font-size: 2vh;
+    margin-right: 5vw;
+}
+.form .form-container .form-row p{
+    margin: auto;
+    color: black;
+    font-size: 16px;
+}
+.form .form-container .form-row span{
+    color: blue;
+}
+
+ .btncontainer{
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+    justify-content: center;
+}
+.btncontainer .cancelbutton{
+    margin-right: 10px;
+}
+/* Add styles for the transition effect on the body */
+.body-opacity-transition {
+    opacity: 0.7; /* You can adjust the opacity value */
+    transition: opacity 0.5s ease-in-out; /* Adjust the transition duration and easing as needed */
+}
+
+    
+</style>
+
+
+<script>
+    // Get all FAQ headers and their associated content
+// Get all FAQ headers and their associated content
+document.addEventListener('DOMContentLoaded', function() {
+    // Your JavaScript code here
+   // Get all FAQ headers and their associated content
+
+
+// create a const variable and select all the class which is used for the function
+const faqHeaders = document.querySelectorAll(".faqcontainer .faq-header");
+
+// for faq questions
+faqHeaders.forEach((header, i) => {
+  header.addEventListener("click", () => {
+
+    // next element sibling the content or answer of the question of class fa-header
+    header.nextElementSibling.classList.toggle("active");
+
+    const open = header.querySelector(".open");
+    const close = header.querySelector(".close");
+
+    // if answer is currently showing by user means active then remove the + icon and showing the - icon
+
+    if (header.nextElementSibling.classList.contains("active")) {
+      open.classList.remove("active");
+      close.classList.add("active");
+    }
+
+    // if answer is not shown by user currently then remove the - icon and showing the +icon 
+
+     else {
+      open.classList.add("active");
+      close.classList.remove("active");
+    }
+  });
+});
+});
+
+
+
+</script>
+
+
+<script>
+    
+   document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listener to close icon
+    document.getElementById('closeIcon').addEventListener('click', () => {
+        var formcontainer = document.querySelector('.form');
+        if (formcontainer) {
+            formcontainer.style.display = 'none'; // Hide the form instead of removing it
+            document.body.style.opacity='1';
+        }
+    });
+
+
+    // Add click event listener to the "Login" button
+    const loginCheck = localStorage.getItem('isLogin')
+    if(loginCheck){
+            const profile = document.getElementById('profile');
+            profile.style.display = 'block';
+            const loginnow = document.getElementById('login-button');
+            loginnow.style.display = 'none';
+        }
+
+
+    document.querySelector('#header .btnlogin').addEventListener('click', function() {
+
+        if(loginCheck){
+            alert('login already done')
+            const profile =   document.getElementById('profile');
+            profile.style.display = 'block';
+        }else{
+            var formshow = document.getElementById('btnlogin'); // Select the form container by its ID
+            if (formshow) {
+                formshow.style.display = 'block';
+            }
+        }
+    });
+
+
+
+    // Add click event listener to the "Login" link
+
+    document.getElementById('loginhere').addEventListener('click', function() {
+        var loginform = document.getElementById('loginbtn');
+        var signup = document.getElementById('btnlogin');
+        if (loginform) {
+            signup.style.display = 'none';
+            loginform.style.display = 'block';
+        }
+    });
+
+    // for back to signup
+    document.getElementById('arrowleft').addEventListener('click', function() {
+        var loginform = document.getElementById('loginbtn');
+        var signup = document.getElementById('btnlogin');
+        if(loginform)
+        {
+            loginform.style.display='none';
+            signup.style.display='block';
+        }
+    });   
+
+    // for back to login
+    document.getElementById('leftarrow').addEventListener('click', function() {
+        var loginform = document.getElementById('loginbtn');
+        var signup = document.getElementById('btnlogin');
+        var forgotpassword = document.getElementById('forgotpassword');
+        if(loginform)
+        {
+            loginform.style.display='block';
+            signup.style.display='none';
+            forgotpassword.style.display = 'none';
+
+        }
+    });   
+
+    // for forgotpassword popup
+    document.getElementById('forgotpswd').addEventListener('click', function() {
+        var loginform = document.getElementById('loginbtn');
+        var signup = document.getElementById('btnlogin');
+        var forgotpassword = document.getElementById('forgotpassword');
+        if(forgotpassword)
+        {
+            loginform.style.display='none';
+            signup.style.display='none';
+            forgotpassword.style.display='block';
+        }
+
+    });
+
+        // get signup value and check whether it is already present or not
+
+    document.getElementById('signin').addEventListener('click', function () {
+    // Get user input data
+    const name = document.getElementById('namevalue').value;
+    const email = document.getElementById('emailvalue').value;
+    const password = document.getElementById('passwordvalue').value; // Corrected the ID
+    const confirmPassword = document.getElementById('confirmpassword').value;
+    const phoneNumber = document.getElementById('phonenumber').value;
+    const address = document.getElementById('addressid').value;
+    const email_check = email.trim();
+    if(email_check.includes('@') && phoneNumber.length===10){
+    // Construct the API URL with query parameters
+    const apiUrl = `http://10.80.14.41/signupuser.php?name=${name}&email=${email}&password=${password}&confirmpassword=${confirmPassword}&phonenumber=${phoneNumber}&address=${address}`;
+
+    // Make a GET request to your PHP API
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(result => {
+            if (result.response === 'User with the same phone number already exists') {
+                alert('User with the same phone number already exists.');
+            } else if (result.response === 'Account has been successfully created') {
+                
+                alert('Registration successful!');
+            } else {
+                alert('Password and confirm password do not match');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        });
+    }
+    else{
+        alert('Details are not correct');
+    }
+}); 
+
+const bag1 = document.getElementById('bag1');
+          bag1.style.display='block';
+        document.getElementById('loginnow').addEventListener('click', function () {
+    // Get user input data
+    const emailhere = document.getElementById('emailhere').value;
+    const passwordhere = document.getElementById('passwordhere').value;
+
+    // Construct the API URL
+    const apiUrl = `http://10.80.14.41/loginuser.php?email=${emailhere}&password=${passwordhere}`;
+
+    fetch(apiUrl)
+      .then(response => response.json()) // Parse the response as JSON
+      .then(result => {
+        if (result.response === 'successful authentication') {
+            
+            // Save user data to local storage
+          localStorage.setItem('name', result.name);
+          localStorage.setItem('email', result.email);
+          localStorage.setItem('phone', result.phone);
+          
+          const profile = document.getElementById('profile');
+          profile.style.display = 'block';
+          const loginuserbutton = document.getElementById('login-button');
+          loginuserbutton.style.display = 'none';
+        //   loginbtn.style.display  = 'none';
+          localStorage.setItem('isLogin', true);
+          loginbtn.style.display = 'none';
+          // Redirect to the new HTML page
+          // Redirect or perform other actions for a successful login
+        } else if (result.response === 'not successful authentication') {
+          alert('Login failed');
+          // Handle login failure (e.g., display an error message)
+        } else {
+          alert('Something went wrong');
+          // Handle unexpected errors
+        }
+      });
+});
+
+        document.getElementById('passwordhere').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        // Simulate a click on the login button
+        document.getElementById('loginnow').click();
+    }
+});
+
+
+    // // for visit the user information after login successfull 
+
+         document.getElementById('profile').addEventListener('click', function()  {
+        window.location.href = 'myprofile.html';
+    });
+          });
+
+</script>
+
+<body>
+    
+    <section id="header">
+        <a href="#"><img src="logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar" class="Navar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="abt.html">About</a></li>
+                <li><a href="cntct.html">Contact Us</a></li>
+                <li id="bag1" style="display: none;"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+                <button class="btn btnlogin" id="login-button">Login</button>
+                <i class="fa fa-user" aria-hidden="true" id="profile" style="display: none; border: 2px solid black; font-size: 40px; border-top-right-radius: 10px;  border-top-left-radius: 10px; cursor: pointer;"></i>
+                
+            </ul>
+            
+        </div>
+        <div id="mobile">
+            
+           <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+    <section id="hero">
+        <h4>Trade-In-Offer</h4>
+        <h2>Super Value Deals</h2>
+        <h1>On All Products</h1>
+        <p>Save more with coupns & upto 70% off!</p>
+        <button onclick="window.location.href='shop.html'  ">Shop Now</button>
+        
+           <div class="form" id="btnlogin" style="display: none;">
+            <i class="fa fa-times-circle" aria-hidden="true" id="closeIcon"></i>
+            <!--  Signup form   -->
+        
+            <h2>SignUp</h2>
+            <form class="form-container" id="signupform">
+                <div class="form-row">
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" id="namevalue" placeholder="Enter Your Full Name" name="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" id="emailvalue" placeholder="Enter Email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" id="passwordvalue" placeholder="Enter Password" name="psw" required>
+                </div>
+                <div class="form-row">
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" id="confirmpassword" placeholder="Repeat Password" name="confirmpassword" required>
+                </div>
+                <div class="form-row">
+                    <label for="phone"><b>Phone number</b></label>
+                    <input type="tel" id="phonenumber" placeholder="Your Phone number" name="phonenumber" required>
+                </div>
+                <div class="form-row">
+                    <label for="address"><b>Address</b></label>
+                    <input type="text" id="addressid" placeholder="Enter your address">
+                </div>
+                <div class="form-row">
+                    <p>Already have an Account? <span id="loginhere" style="cursor: pointer;">Login</span></p>
+                </div>
+            </form>
+            <div class="btncontainer">
+                <div class="signupbutton">
+                    <button class="signup" id="signin">SignUp</button>
+                </div>
+            </div>
+           </div>
+        
+            
+            <!-- // for login form -->
+
+            <div class="loginform form" id="loginbtn" style="display: none;height: 29vh;">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true" id="arrowleft" style="top: 12px; right: 37vw; font-size: 30px;"></i>
+                <!-- Your login form content goes here -->
+                <!-- Example: -->
+                <h2>Login</h2>
+                <form class="form-container">
+                    <div class="form-row">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" id="emailhere" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" id="passwordhere" name="psw" required>
+                    </div>
+                </form>
+                <div class="btncontainer">
+                    <span id="forgotpswd" style="margin-right:10px;color: blue; cursor: pointer;">
+                        Forgot Password?
+                    </span>
+                    <div class="signupbutton">
+                        <button class="signup" id="loginnow">Login</button>
+                    </div>
+                </div>
+              
+            </div>  
+
+                <!-- forgot password -->
+
+
+            <div class="form" id="forgotpassword" style="height: 29vh; display: none;">
+
+
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true" id="leftarrow" style="top: 12px; right: 37vw; font-size: 30px;"></i>
+
+
+                    <h2>Verify OTP</h2>
+                    <form class="form-container">
+                        <div class="form-row">
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <button style="margin: auto;">Verify OTP</button>
+                        </div>
+                    </form>
+                    
+                  
+            </div>  
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="f1.png" alt="">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="f2.png" alt="">
+            <h6>ONline Order</h6>
+        </div>
+        <div class="fe-box">
+            <img src="f3.png" alt="">
+            <h6>Shave Money</h6>
+        </div>
+        <div class="fe-box">
+            <img id="f41" src="f4.png" alt="">
+            <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+            <img src="f5.png" alt="">
+            <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-box">
+            <img src="f6.png" alt="">
+            <h6>24/7 Support</h6>
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">  
+        <h2>Featured Products</h2>
+        <p>Summer Collections New Modern Design</p>
+        <div class="pro-container">
+            <div class="pro"  onclick="window.location.href='singleprodct.html'  " >
+                <img src="singleprdctimg/img1.jpg" alt="">
+                <div class="des">
+                    <span>Tanip</span>
+                    <h5>Regular Fit Checkered Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹279</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro" onclick="window.location.href='single.html'  " >
+                <img src="product image/t6.jpg" alt="">
+                <div class="des">
+                    <span>Levis</span>
+                    <h5>Emoticans Print White Tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹165</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro" onclick="window.location.href='singlefour.html'  " >
+                <img src="product image/combo.jpg" alt="">
+                <div class="des">
+                    <span>Ivory & Mint</span>
+                    <h5>Lux Pullover Sweater</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹179</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            
+            <div class="pro" onclick="window.location.href='singlesix.html'  ">
+                <img src="product image/t3.jpg" alt="">
+                <div class="des">
+                    <span>Merch tshirt</span>
+                    <h5>Black Round Neck Tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹199</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            
+            <div class="pro">
+                <img src="product image/pro5.jpg" alt="">
+                <div class="des">
+                    <span>Blackberrys</span>
+                    <h5>Global Basic SweatShirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹279</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/t4.jpg" alt="">
+                <div class="des">
+                    <span>Van Heusen</span>
+                    <h5>U nech tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹279</h4>
+                </div>
+                
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/h1.jpg" alt="">
+                <div class="des">
+                    <span>Hoodie</span>
+                    <h5>Cat Print Hoodie</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹229</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/h2.jpg" alt="">
+                <div class="des">
+                    <span>Full Nech tshirt</span>
+                    <h5>Letter print tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹399</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/img22.jpg" alt="">
+                <div class="des">
+                    <span>Full Jacket</span>
+                    <h5>Letter print tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹379</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/2.jpg" alt="">
+                <div class="des">
+                    <span>Calvin Klein</span>
+                    <h5>Harry Potter Glasses Hoodie</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹222</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+             <div class="pro">
+                <img src="product image/w1.jpg" alt="">
+                <div class="des">
+                    <span>Cartoon print</span>
+                    <h5>Contrast Color SweatShirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹219</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/t7.jpg" alt="">
+                <div class="des">
+                    <span>Premium Allen Solly Men's White Winter Cool T-Shirt - Effortless Style</span>
+                    <h5>Trendy and Comfortable Letter Print Raglan Sleeve Sweatshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹299</h4>
+                </div> 
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/3.jpg" alt="">
+                <div class="des">
+                    <span>Polyester Plain Embellished Slight Stretch Summer Women Tops,</span>
+                    <h5>Solid Drop Shoulder Tee Mens Round Neck Tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹139</h4>
+                </div> 
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/4.jpg" alt="">
+                <div class="des">
+                    <span>Dark Wash Casual Collar Long Sleeve Denim Plain Shirt</span>
+                    <h5>Men Cotton Flap Pocket Denim Shirt without tee</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹419</h4>
+                </div> 
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/5.jpg" alt="">
+                <div class="des">
+                    <span>Stylish and Comfortable Medium Wash Denim Plain Slim Straight Jeans</span>
+                    <h5>Classic and Trendy Men's Cat Whisker Straight Leg Jeans</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹429</h4>
+                </div> 
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product image/7.jpg" alt="">
+                <div class="des">
+                    <span>Womens Lightweight Faux Leather Varsity Bomber Jacket s</span>
+                    <h5>Luxury Fashion and Independent Designer</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹449</h4>
+                </div> 
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="banner" class="section-m1">
+        <h4>Repair Service</h4>
+        <h2>Up to <span>70% Off</span> - All t-shirts & Jackets</h2>
+        <button class="normal" onclick="window.location.href='explorenow.html'  ">Explore More</button>
+    </section>
+    
+    <section id="product1" class="section-p1 latestlaunch"> 
+        <h2><span>Latest</span> <span>Launches</span></h2>
+        <p>Summer Solstice Collection</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="product2/p11.jpg" alt="">
+                <div class="des">
+                    <span>Tanip</span>
+                    <h5>Men Tropical Print Patched Pocket tee</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹399</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product2/p22.jpg" alt="">
+                <div class="des">
+                    <span>Solid Drop Shoulder tee</span>
+                    <h5>Navy Blue Casual Collar Half Sleeve Polyester Plain</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹345</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product2/p33.jpg" alt="">
+                <div class="des">
+                    <span>Slogan Graphic Tee Without Necklace</span>
+                    <h5>Dark Green Casual Collar Short Sleeve </h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹499</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            
+            <div class="pro">
+                <img src="product2/p44.jpg" alt="">
+                <div class="des">
+                    <span>Men Moon Curved Hem Tee</span>
+                    <h5>White Casual Short Sleeve Polyester Graphic Slogan Slight</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹599</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            
+            <div class="pro">
+                <img src="product2/p12.jpg" alt="">
+                <div class="des">
+                    <span>Blackberrys</span>
+                    <h5>Global Basic SweatShirt Round NecK Full Sleeve</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹579</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product2/p10.jpg" alt="">
+                <div class="des">
+                    <span>Shirt Under Tshirt</span>
+                    <h5>U nech tshirt Full Sleeve</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹879</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product2/p99.jpg" alt="">
+                <div class="des">
+                    <span>White Top</span>
+                    <h5>White Print Top</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹999</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product2/p88.jpg" alt="">
+                <div class="des">
+                    <span>Full Nech tshirt</span>
+                    <h5>Letter print tshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹799</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="product2/p7.jpg" alt="">
+                <div class="des">
+                    <span>Calvin Klein</span>
+                    <h5>Dark Green Tshirt Girl Style</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹620</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+             <div class="pro">
+                <img src="product2/p55.jpg" alt="">
+                <div class="des">
+                    <span>Cartoon print</span>
+                    <h5>Black tshirt Girl style</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹540</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="smbanner">
+        <div class="banner-box">
+            <h4>crazy deals</h4>
+            <h2>Buy 1 Get 1 Free</h2>
+            <span>the best classic dress in one sale at cara</span>
+            <button>Learn More</button>
+        </div>
+        
+        <div class="banner-box bannerbox2">
+            <h4>spring/summer</h4>
+            <h2>upcomjng Season</h2>
+            <span>the best classic dress in one sale at cara</span>
+            <button>Collection</button>
+        </div>
+    </section>
+
+   
+
+    <section id="banner3" class="section-m1">
+        <div class="banner-box">    
+            <h2>Season Sale</h2>    
+            <h3>Winter Collection -50%OFF</h3>
+        </div>
+        <div class="banner-box banner-box2">    
+            <h2>New Jacket Collections</h2>    
+            <h3>Winter Collection -50%OFF</h3>
+        </div>
+        <div class="banner-box banner-box3">    
+            <h2>Tops</h2>    
+            <h3>New Trendy Prints</h3>
+        </div>
+    </section>
+
+    
+    <section id="news" class="section-p1 section-m1">
+
+        <div class="newstext">
+            <h4>SignUp For NewsLetter
+            </h4>
+            <p class="para">Get E-mail Updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <!-- // for response -->
+       
+        <div class="form section-m1">   
+            <input type="text" placeholder="Your email address">
+            <button class="newsbutton" id="mail" onclick="showpopup()">Subscribe</button>
+        </div>
+    </section>
+
+    <!-- creating a faq question for the user -->
+
+    <section class="faqcontainer" class="section-p1">
+            <h2>-----Frequently Asked Questions (FAQ)?-----</h2>
+        <div class="questionscontainer section-m1">
+            <div class="faq-header">
+                <h3>Are there any special offers for first-time customers?</h3>
+                <span class="open active" id="plusButton">+</span>
+                <span class="close" id="closeIcon">-</span>
+            </div>
+            <div class="content1 section-p2">
+                <h4>"Yes, Keep an eye on your email after signing up to receive the offer. <br> We also run various promotions and exclusive deals for our new customers from time to time."</h4>
+            </div>
+        </div>
+        <div class="questionscontainer section-m1">
+            <div class="faq-header">
+                <h3>How can I place an order?</h3>
+                <span class="open active">+</span>
+                <span class="close" id="closeIcon">-</span>
+            </div>
+            <div class="content1 section-p2">
+                <h4>Visit the e-commerce website and browse through the products or services they offer. <br> You can use the search bar or navigate through different categories to find the item you want to purchase.</h4>
+            </div>
+        </div>
+
+        <div class="questionscontainer section-m1">
+            <div class="faq-header">
+                <h3>What payment methods do you accept for online purchases?</h3>
+                <span class="open active">+</span>
+                <span class="close" id="closeIcon">-</span>
+            </div>
+            <div class="content1 section-p2">
+                <h4>Google Pay: A mobile payment platform that allows users to make purchases using Android devices.<br>
+                Offline Payment Options: Some websites may offer offline payment methods like cash on delivery (COD), <br> where the customer pays in cash upon receiving the </h4>
+            </div>
+        </div>
+
+        <div class="questionscontainer section-m1">
+            <div class="faq-header">
+                <h3>Do you have a mobile app for easier shopping on-the-go?</h3>
+                <span class="open active">+</span>
+                <span class="close" id="closeIcon">-</span>
+            </div>
+            <div class="content1 section-p2">
+                <h4>No</h4>
+            </div>
+        </div>
+
+        <div class="questionscontainer section-m1">
+            <div class="faq-header">
+                <h3>Can I increase the quantity of products?</h3>
+                <span class="open active">+</span>
+                <span class="close" id="closeIcon">-</span>
+            </div>
+            <div class="content1 section-p2">
+                <h4> "Yes",Each product in the cart usually has a "+," "plus," or "add" button next to the quantity field. <br> Clicking this button will increment the quantity by one each time you click it.</h4>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer class="section-m1 footer-p1">
+            <div class="col">
+                <img class="logo" src="logo.png" alt="">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Amlori,Sarsar Siwan Bihar India</p>
+                <p><strong>Phone: </strong> 887300259</p>
+                <p><strong>Hours: </strong> 10:00AM - 8PM Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                    <h4>About</h4>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="delivery.html">Delivery Information</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="contactus.html">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play Store</p>
+                <div class="row">
+                    <img src="pay/app.jpg" alt="">
+                    <img src="pay/play.jpg" alt="">
+                </div>
+            </div>
+    </footer>
+
+            
+</body>
+
+</html>

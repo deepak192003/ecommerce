@@ -1,0 +1,61 @@
+#productdetails .singleproimg{
+    flex-wrap: wrap;
+    width: 40%;
+    margin-right: 50px;
+}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+}
+.smallimg{
+    flex-basis: 31%;
+    cursor: pointer;
+}
+#productdetails{
+    display: flex;
+    margin-top: 20px;
+}
+#productdetails .singleprodetail{
+    width: 50%;
+    padding-top: 30px;
+}
+#productdetails .singleprodetail h4{
+    padding: 40px 0 20px 0;
+}
+#productdetails .singleprodetail h2{
+    padding-top: 40px 0 20px 0;
+    font-size: 26px;
+}
+#productdetails .singleprodetail select{
+    margin-top: 12px;
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+#productdetails .singleprodetail input{
+    width: 55px;
+    height: 45px;
+    padding-left: 17px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+#productdetails .singleprodetail input{
+    outline: none;
+}
+#productdetails .singleprodetail  .button{
+    background-color: rgb(10, 112, 10);
+    color: aliceblue;
+    font-size: 20px;
+    padding: 12px;
+}
+#productdetails .singleprodetail span{
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: 30;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#productdetails .singleproimg #main{
+    width: 100%;
+    height: 700px;
+}

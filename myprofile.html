@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet"  media="screen and (max-width: 1340px)" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="myprofile.css"></script>
+   <script src="./loginauthenticaton/userinforcookies.js"></script>
+</head>
+
+
+    <style>
+        /* Basic CSS for sidebar navigation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #100e0e;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            margin-top: 33px;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #342525;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* Add some spacing for the sections */
+        .section {
+            margin-top: 20px;
+            padding: 20px;
+        }
+      .content  .hero{
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+      .content  .hero .card img{
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+      }
+      .content .profileinfor #fullname{
+        display: flex;
+        
+      }
+    </style>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+            let profile_pic = document.getElementById('profile_pic');
+            let inputfile = document.getElementById('input-file');
+
+            inputfile.onchange = function () {
+                const file = inputfile.files[0];
+                if (file) {
+                    const imageURL = URL.createObjectURL(file);
+                    profile_pic.src = imageURL;
+                }
+            }
+            const addressinput = document.getElementById('address');
+            // Retrieve user data from local storage
+            const name = localStorage.getItem('name');
+            const email = localStorage.getItem('email');
+            const phone = localStorage.getItem('phone');
+            const address = localStorage.getItem('address');
+            // Display user data in the HTML elements
+            document.getElementById('fullname').value = name;
+            document.getElementById('email').value = email;
+            document.getElementById('phonenumber').value = phone;
+            
+            const logouthere = document.getElementById('logouthere');
+            logouthere.addEventListener('click', function () {
+            localStorage.removeItem('name');
+            localStorage.removeItem('email');
+            localStorage.removeItem('phone');
+            localStorage.removeItem('isLogin');
+            localStorage.removeItem('address');
+            window.location.href = 'index.html';
+            });
+            
+        });
+
+    </script>
+    <body>
+  
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="#" onclick="showProfile()">Profile</a>
+        <a  href="cart.html" onclick="showMyCart()">My Cart</a>
+    </div>
+    
+    <div class="content">
+        <!-- Your page content goes here -->
+        <!-- profile section -->
+        <div class="section" id="profile">
+            <div class="hero">
+                <div class="card">
+                    <img src="PROFILE.png" alt="" id="profile_pic">
+                    <label for="input-file" style="margin-bottom: 5px;font-weight: bold; display: block; width: 200px; background: #e3362c; color: #fff; padding: 12px; cursor: pointer; border-radius: 3px; text-align: center;">Update Image</label>
+                    <input type="file" accept="image/jpg, image/png" id="input-file" style="display: none;">
+                </div>
+            </div>
+            <div class="left-side" style="flex: 1;margin: 10px; float: left;width: 45%">
+                <div class="profileinfo" style="margin-bottom: 20px;">
+                    <label for="name" style="display: block; margin-bottom: 5px;font-weight: bold;">Full Name</label>
+                    <input type="text" id="fullname" placeholder="Enter Your Full Name" style="height: 34px;width: 24vw; padding: 23px;">
+                </div>
+                <div class="profileinfo"style="margin-bottom: 20px;">
+                    <label for="address" style="display: block; margin-bottom: 5px;font-weight: bold;">Address</label>
+                    <input type="text" id="address" placeholder="Enter Your Address" style="height: 34px;width: 24vw; padding: 23px;">
+                </div>
+            </div>
+            <div class="right-side" style="flex: 1;margin: 10px;">
+                <div class="profileinfo"style="margin-bottom: 20px;">
+                    <label for="phonenumber" style="display: block; margin-bottom: 5px;font-weight: bold;">Phone Number</label>
+                    <input type="text" id="phonenumber" placeholder="Enter Your Phone Number" style="height: 34px;width: 24vw; padding: 23px;">
+                </div>
+                <div class="profileinfo"style="margin-bottom: 20px;">
+                    <label for="email" style="display: block; margin-bottom: 5px;font-weight: bold;">Email</label>
+                    <input type="text" id="email" placeholder="Enter Your Email" style="height: 34px;width: 24vw; padding: 23px;">
+                </div>
+            </div>
+        </div>
+        <button style=" height: 34px; border: none; width: 10vw; background-color: rgb(61, 61, 234); color: white; padding: 4px; cursor: pointer; " id="changes">Changes Saved</button>
+        <button style=" height: 34px; border: none; width: 10vw; background-color: red; color: white; padding: 4px; cursor: pointer; " id="logouthere">Logout</button>
+        
+        <!-- my order section -->
+        
+        
+
+
+        <!-- cart section -->
+
+      
+
+        <!-- order history -->
+       
+
+
+    </div>
+
+   
+   
+</body>
+</html>

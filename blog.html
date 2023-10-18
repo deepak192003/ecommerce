@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"  media="screen and (max-width: 1000px)" href="blogresponsive.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet"  media="screen and (max-width: 1340px)" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        alert('hello')
+        const loginCheck = localStorage.getItem('isLogin')
+        if(loginCheck){
+            const profile = document.getElementById('profile');
+            profile.style.display = 'block';
+            const loginnow = document.getElementById('login-button');
+            loginnow.style.display = 'none';
+        }
+    });
+</script>
+<body>
+    <section id="header">
+        <a href="#"><img src="logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar" class="Navar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+
+                <li><a  class="active" href="blog.html">Blog</a></li>
+                <li><a href="abt.html">About</a></li>
+                <li><a href="cntct.html">Contact Us</a></li>
+                <li id="bag1"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+            </ul>
+            
+        </div>
+        <div id="mobile">
+            
+           <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section class="deals">
+        <div class="blogtitle">
+            <h2>Ultimate Guilde for Online Shoping On Our Platform</h2>
+        </div>
+        <div class="blogtitlecontent section-p1">
+           <h4> Welcome to the ultimate guide on our platform! We are thrilled to have you
+             here and excited to show you how to make the most of your experience with us. 
+             This comprehensive guide will walk you through all the fantastic features and 
+             functionalities our platform offers, empowering you to achieve your goals like never before.</h4>
+        </div>
+        <div class="blogimg section-p1">
+            <img src="./blogimage/b1.webp" alt="">
+        </div>
+    </section>
+    
+    <section class="deals">
+        <div class="blogtitle">
+            <h2>Come Here For Know Special Offer On Festivals</h2>
+        </div>
+        <div class="blogtitlecontent section-p1">
+           <h4> Welcome to the ultimate guide on our platform! We are thrilled to have you
+             here and excited to show you how to make the most of your experience with us. 
+             This comprehensive guide will walk you through all the fantastic features and 
+             functionalities our platform offers, empowering you to achieve your goals like never before.</h4>
+        </div>
+        <div class="blogimg section-p1">
+            <img src="./blogimage/intro.jpg" alt="">
+        </div>
+    </section>
+    
+    <section class="deals">
+        <div class="discounttitle">
+            <h2>Products Features and quality</h2>
+        </div>
+        <div class="blogtitlecontent section-p1">
+           <h4> Welcome to the ultimate guide on our platform! We are thrilled to have you
+             here and excited to show you how to make the most of your experience with us. 
+             This comprehensive guide will walk you through all the fantastic features and 
+             functionalities our platform offers, empowering you to achieve your goals like never before.</h4>
+        </div>
+        <div class="blogimg productimg section-p1">
+            <img src="./blogimage/premium.png" alt="">
+        </div>
+    </section>
+   
+    
+
+    <section id="popup">
+        <div class="check">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+        </div>
+        <div class="response">
+            <p id="yourresponse">Your Response Has Been Recorded</p>
+        </div>   
+    </section>
+   
+
+    
+    <section id="news" class="section-p1 section-m1">
+
+        <div class="newstext">
+            <h4>SignUp For NewsLetter
+            </h4>
+            <p class="para">Get E-mail Updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <!-- // for response -->
+       
+        <div class="form section-m1">   
+            <input type="text" placeholder="Your email address">
+            <button class="newsbutton" onclick="showpopup()">SignUp</button>
+        </div>
+    </section>
+
+    <!-- creating a faq question for the user -->
+        <footer class="section-m1 footer-p1">
+            <div class="col">
+                <img class="logo" src="logo.png" alt="">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Amlori,Sarsar Siwan Bihar India</p>
+                <p><strong>Phone: </strong> 887300259</p>
+                <p><strong>Hours: </strong> 10:00AM - 8PM Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                    <h4>About</h4>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="delivery.html">Delivery Information</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="contactus.html">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play Store</p>
+                <div class="row">
+                    <img src="pay/app.jpg" alt="">
+                    <img src="pay/play.jpg" alt="">
+                </div>
+            </div>
+        </footer>
+        
+    <section class="section-p1" id="arrow-up">
+       <div class="arrowup" id="uparrow">
+        <i class="fas fa-arrow-up"></i>
+       </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

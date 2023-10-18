@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet"  media="screen and (max-width: 1340px)" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="cntct.css">
+    <link rel="stylesheet"  media="screen and (max-width: 1700px)" href="cntct.responsive.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Your code here
+
+    document.getElementById('send').addEventListener('click', function () {
+        // Get user input data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value; // Corrected the ID
+        const address = document.getElementById('address').value;
+        const message = document.getElementById('message').value;
+        const email_check = email.trim();
+
+        if (email_check.includes('@') && phone.length === 10) {
+            // Construct the API URL with query parameters
+            const apiUrl = `http://10.140.0.25/contact.php?name=${name}&email=${email}&phone=${phone}&address=${address}&message=${message}`;
+
+            // Make a GET request to your PHP API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(result => {
+                    if (result.status === 'success') {
+                        alert('Your response has been submitted successfully!');
+                    } else {
+                        alert('An error occurred: ' + result.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                });
+        }
+    });
+});
+
+</script>
+<body>
+    <section id="header">
+        <a href="#"><img src="logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar" class="Navar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="abt.html">About</a></li>
+                <li><a class="active" href="cntct.html">Contact Us</a></li>
+                <li id="bag1"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+            </ul>
+            
+        </div>
+        <div id="mobile">
+            
+           <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section class="contactbox">
+        <div class="contactimg">
+        <div class="contactcontent section-p1">
+            <h2>Contact Us</h2>
+        </div>
+    </div>
+    </section>
+
+    <section class="contactheader section-p1">
+        <h2>Let's Get In Touch !</h2>
+   </section>
+
+   <section class="contactcontainer section-p1" style="align-items: center; justify-content: center;">
+    <div class="enquirybox section-p1">
+       
+        <h2>Products Enquiry</h2>
+        <h3>Feel free to reach out to us if you have a query related to any items or product
+            that we offer, our associates are available on chat 24/7.</h3>
+        <div class="contactform section-p1">
+            <input type="text" id="name" class="vertical-input" placeholder="Full Name">
+            <input type="text" id="email"  class="vertical-input email" placeholder="E-mail Address">
+            <input type="text" id="phone" class="vertical-input" placeholder="Phone Number">
+            <input type="text" id="address" class="vertical-input" placeholder="Address">
+            <input type="text" id="message" class="vertical-input" placeholder="Type your query" id="message" onkeydown="sendMessage(event)">
+            <button class="btn vertical-input" id="send" >Submit</button>
+        </div>
+    </div>
+    </section>
+    <section class="map section-p1">
+        <div class="googlemap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.643562573452!2d70.79559817597344!3d22.36708365946548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c83c48bd0ca3%3A0xa0e4958f3590431f!2sMarwadi%20Education%20Foundation&#39;s%20Group%20of%20Institutions%20Hostel!5e0!3m2!1sen!2sin!4v1690781046643!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="employees">
+            <div class="employeedetails">
+                <div class="employeeone">
+                    <img src="./employee img/e1.jpeg" alt="">
+                </div>
+                <div class="employeeoneinfo">
+                    <h4>John Doe</h4>
+                    <p>Senior Marketing Manager <br>
+                       <span>Phone : +020-242-i191</span><br>
+                        <span>Email : johnamertic@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+            <div class="employeedetails">
+                <div class="employeeone">
+                    <img src="./employee img/e3.jpeg" alt="">
+                </div>
+                <div class="employeeoneinfo">
+                    <h4>William Smitth</h4>
+                    <p>Senior Java Developer <br>
+                       <span>Phone : +020-242-i191</span><br>
+                        <span>Email : johnamertic@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+            <div class="employeedetails">
+                <div class="employeeone">
+                    <img src="./employee img/e2.jpeg" alt="">
+                </div>
+                <div class="employeeoneinfo">
+                    <h4>John Doe</h4>
+                    <p>Senior Project Manager <br>
+                       <span>Phone : +020-242-i191</span><br>
+                        <span>Email : johnamertic@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="popup">
+        <div class="check">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+        </div>
+        <div class="response">
+            <p id="yourresponse">Your Response Has Been Recorded</p>
+        </div>   
+    </section>
+    
+    <section id="news" class="section-p1 section-m1">
+
+        <div class="newstext">
+            <h4>SignUp For NewsLetter
+            </h4>
+            <p class="para">Get E-mail Updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <!-- // for response -->
+       
+        <div class="form section-m1">   
+            <input type="text" placeholder="Your email address">
+            <button class="newsbutton" onclick="showpopup()">SignUp</button>
+        </div>
+    </section>
+
+    <!-- creating a faq question for the user -->
+
+   
+
+        <footer class="section-m1 footer-p1">
+            <div class="col">
+                <img class="logo" src="logo.png" alt="">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Amlori,Sarsar Siwan Bihar India</p>
+                <p><strong>Phone: </strong> 887300259</p>
+                <p><strong>Hours: </strong> 10:00AM - 8PM Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                    <h4>About</h4>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="delivery.html">Delivery Information</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="contactus.html">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play Store</p>
+                <div class="row">
+                    <img src="pay/app.jpg" alt="">
+                    <img src="pay/play.jpg" alt="">
+                </div>
+            </div>
+        </footer>
+        
+    <section class="section-p1" id="arrow-up">
+       <div class="arrowup" id="uparrow">
+        <i class="fas fa-arrow-up"></i>
+       </div>
+    </section>
+
+    <style>
+        .enquirybox{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1);
+    background-color: #E3E6F3;
+    width: 60%;
+    height: 40vw;
+}
+    </style>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

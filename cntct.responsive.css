@@ -1,0 +1,56 @@
+@media (max-width:900px)
+{
+    .contactcontainer {
+        flex-direction: column;
+    }
+    .enquirybox {
+        margin-left: 10px;
+        padding: 5px 0px 0px 0px;
+        width: 100%;
+        height: 55vh;
+    }
+    .contactcontainer .corporatenquriy {
+      margin-left: 10px;
+        padding: 5px 0px 0px 0px;
+        width: 100%;
+        height: 55vh;
+    }
+    .map {
+       flex-direction: column;
+    }
+    .map .employees {
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        margin-left: 9vw;
+    }
+    #news h4 {
+       margin-top: 12px;
+    }
+    
+    .contactbox .contactimg {
+        height: 29vh;
+        width: 100%;
+    }
+}
+@media (max-width:430px)
+{
+    .enquirybox {
+      
+        width: 100%;
+        height: 95vh;
+    }
+    .contactcontainer .corporatenquriy {
+       
+        height: 95vh;
+    }
+    .map{
+        width: 100%;
+    }
+  
+    .map .employees {
+        width: 30%;
+        margin-left: 12vh;
+    }
+}
+

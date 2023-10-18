@@ -1,0 +1,47 @@
+    /* Your existing CSS styles here */
+
+    /* Style for the left and right sides */
+    .left-side,
+    .right-side {
+        flex: 1;
+        margin: 10px;
+    }
+
+    /* Style for profileinfo containers */
+    .profileinfo {
+        margin-bottom: 20px;
+    }
+
+    /* Style for labels */
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    /* Style for input fields */
+    input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    /* Additional styling for the left and right sides */
+    .left-side {
+        float: left;
+        width: 45%; /* Adjust the width as needed */
+    }
+
+    .right-side {
+        float: right;
+        width: 45%; /* Adjust the width as needed */
+    }
+
+    /* Clear floats to ensure proper layout */
+    .content::after {
+        content: "";
+        clear: both;
+        display: table;
+    }

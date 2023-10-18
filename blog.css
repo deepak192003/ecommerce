@@ -1,0 +1,20 @@
+.deals .blogtitlecontent h4{
+    line-height: 2;
+    font-size: 23px;
+    text-align: center;
+}
+.deals .blogimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+.deals .productimg img{
+    height: 51vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}

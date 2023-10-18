@@ -1,0 +1,131 @@
+
+.section-p1{
+    padding: 20px 20px;
+}
+ .users{
+   overflow: hidden;
+   width: 100%;
+}
+#navbar {
+   
+    display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -330px;
+    height: 100vh;
+    width: 300px;
+    background-color: rgb(237, 239, 241);
+    padding: 80px 0px 0px 10px;
+    transition: 0.3s;
+}
+#navbar li{
+    margin-bottom: 23px;
+}
+#mobile{
+    display: flex;
+    align-items: center;
+}
+
+#mobile i{
+    color: black;
+    font-size: 23px;
+    padding-left: 23px;
+}
+#close{
+    display: initial;
+    position: absolute;
+    top: 30px;
+    left: 27px;
+    font-size: 23px;
+}
+#bag1{
+    display: none;
+}
+/*  */
+@media (max-width:1200px)
+{
+    .introduction1 {
+        /* margin: 5px 5px 5px 5px; */
+        flex-direction: column;
+        height: 56vh;
+        width: fit-content;
+    }
+    .introinfo {
+        margin-right: 11px;  
+        margin-left: 2px;   
+        width: 100%;
+    }
+    .introinfo h1 {
+        font-size: 20px;
+    }
+}
+@media (max-width:1200px)
+{
+    .discountdeal {
+        flex-direction: column;
+        height: 70vh;
+    }
+    .discountdeal .discountdealpic {
+       width: 94%;
+        height: 30vh;
+    } 
+    .discountinfo {
+        width: 100%;
+    }
+    
+    .discountdeal h1{
+        width: 100%;
+        margin-left: -12px;
+        margin-top: -34px;
+        font-size: 22px;
+    }  
+}
+@media (max-width:1200px)
+{
+    .premium {
+        margin-left: 0px;
+        flex-direction: column;
+        height: 74vh;
+        margin-right: 23px;
+    }
+    .premium .info3 {
+        width: 100%;
+       height: 90vh;
+    }
+    .info3content {
+        color: rgb(88, 61, 61);
+        line-height: 2;
+        width: 100%;
+    }
+    .info3content {
+        margin-top: -34px;
+        width: 100%;
+    }
+    .info3content h1{
+        width: 100%;
+        margin-left: -12px;
+        margin-top: -34px;
+        font-size: 22px;
+    }
+    .premium .info3 {
+        width: 90%;
+        height: 87vh;
+    }
+    .trendingdesign {
+       flex-direction: column;
+        height: 84hvh;
+        width: 100%;
+    }
+    .trendingdesign .designcontent {
+        width: 100%;
+        
+    }
+    .trendingdesign .info4img {
+        width: 100%;
+        height: 44vh;
+    }
+}
+
